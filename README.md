@@ -1,5 +1,7 @@
-## StyleGAN2 Distillation for Feed-forward Image Manipulation
-![Title image](./imgs/title.jpg)
+##Image sharpening using Knowledge Distillation and Feed-forward Image Manipulation
+![Title image](<img width="607" height="261" alt="image" src="https://github.com/user-attachments/assets/6061dcf9-cce8-4fc4-ae9e-a35248e0d87d" />
+)
+<img width="606" height="198" alt="image" src="https://github.com/user-attachments/assets/4d5ae321-1851-446a-a935-645feed5099c" />
 
 
 
