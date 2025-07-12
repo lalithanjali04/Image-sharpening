@@ -1,6 +1,6 @@
-##Image sharpening using Knowledge Distillation and Feed-forward Image Manipulation
-![Title image](<img width="607" height="261" alt="image" src="https://github.com/user-attachments/assets/6061dcf9-cce8-4fc4-ae9e-a35248e0d87d" />
-)
+## Image sharpening using Knowledge Distillation along with Feed-forward Image Manipulation
+
+<img width="607" height="261" alt="image" src="https://github.com/user-attachments/assets/6061dcf9-cce8-4fc4-ae9e-a35248e0d87d" />
 <img width="606" height="198" alt="image" src="https://github.com/user-attachments/assets/4d5ae321-1851-446a-a935-645feed5099c" />
 
 
@@ -20,11 +20,6 @@
 - [**Synthetic dataset for gender swap**](https://drive.google.com/file/d/1gBgiWYPgm_NRrwWk8bMKdiFQ7FXTFi1s/view?usp=sharing)
 - Pix2pixHD weights for [**to female translation**](https://drive.google.com/file/d/1frJERJr0WM_R38LnSFQ6XjGQtcXnLco1/view?usp=sharing) and for [**to male translation**](https://drive.google.com/file/d/1-6J1CYLsIysk38X9DNN23lIcnvOr8aYh/view?usp=sharing)
 
-## Results
-### Gender swap
-![Gender swap](./imgs/gender.jpg)<br>
-[Full-size](https://drive.google.com/open?id=1hIdu9Mdefec8LpeAybfEGu5_Lnjbx1Qa)
-
 ### Aging
 ![Aging](./imgs/aging.jpg)<br>
 [Full-size](https://drive.google.com/open?id=1MmY8yZbu0K_CH3dX30Yz-jMkd8C9xIuo)
@@ -40,20 +35,6 @@ Based on [stylegan2](https://github.com/NVlabs/stylegan2) and
  
 ### Inference notebook
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EvgenyKashin/stylegan2-distillation/blob/master/Model_infer.ipynb)
-
-### Search for directions
-In stylegan2 directory.
-
-- Generate random images and save source dlatents vectors:
-```
-python run_generator.py generate-images-custom --network=gdrive:networks/stylegan2-ffhq-config-f.pk
- --truncation-psi=0.7 --num 5000 --result-dir /mnt/generated_faces
-```
-- Predict attributes for each image with some pretrained classifier (we used internal)
-- Use `Learn_direction_in_latent_space.ipynb` to find a direction in dlatents
-- Alternatively, you can use publicly available vectors 
-https://twitter.com/robertluxemburg/status/1207087801344372736 
-(stylegan2directions folder in root)
 
 ### Creating paired dataset
 - Generate the dataset using a vector:
@@ -84,26 +65,6 @@ python test.py --name r512_smile_pos --label_nc 0
  --gpu_ids 0,1 --batchSize 32 --how_many 100
 ```
 
-Style mixing:
 
-For style mixing you need to generate mixing examples and create a third folder
- C for the pixp2pixHD model. It turns out that in folder A and C there will be 
- two different people, who have to mix, and in folder B the result. For the 
- learning script, you only need to add `--input_nc 6` parameter.
 
-## License
-The source code, pretrained models, and dataset will be available under
- [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0) license by Yandex LLC. You can **use, copy, tranform and build upon** the
-  material for **non-commercial purposes** as long as you give **appropriate credit** by citing our paper, and indicate if changes were made.
 
-## Citation
-```
-@inproceedings{DBLP:conf/eccv/ViazovetskyiIK20,
-  author    = {Yuri Viazovetskyi and
-               Vladimir Ivashkin and
-               Evgeny Kashin},
-  title     = {StyleGAN2 Distillation for Feed-Forward Image Manipulation},
-  booktitle = {ECCV},
-  year      = {2020}
-}
-```
