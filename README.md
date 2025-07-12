@@ -5,8 +5,6 @@
 
 ## Image Sharpening using Knowledge Distillation
 
-![Sharpening Flow](https://github.com/your-username/Image-sharpening/blob/main/assets/architecture.jpg)
-
 ## Introduction
 
 This project implements **Image Sharpening using Knowledge Distillation (KD)**. It leverages a pre-trained **teacher model** to guide the training of a lightweight **student model** that can enhance blurry images into sharper outputs.
@@ -23,6 +21,11 @@ Train a compact student model to **generate sharper images from blurry inputs**,
 - **Teacher Model**: A deep network like Restormer, SwinIR, or MPRNet trained on image deblurring or restoration tasks.
 - **Student Model**: A smaller CNN or UNet variant that learns to mimic the teacher.
 - **Knowledge Distillation**: The process of transferring "knowledge" (outputs or internal features) from the teacher to the student.
+## 🧮 Loss Functions
+
+- **L1/L2 Reconstruction Loss**: Student vs. sharp ground truth
+- **Perceptual Loss (VGG)**: Student vs. teacher outputs
+- **Feature Distillation Loss**: Matches teacher-student intermediate representations
 
 ## Feed-Forward Image Manipulation
 
@@ -55,6 +58,14 @@ python test.py --name r512_smile_pos --label_nc 0
  --dataroot /mnt/datasets/ffhq_69000 --no_instance --loadSize 512
  --gpu_ids 0,1 --batchSize 32 --how_many 100
 ```
+
+This project demonstrates the practical synergy between Knowledge Distillation and Feed-Forward Image Manipulation for high-quality image sharpening. The resulting student model:
+
+Delivers sharp, detailed outputs in real time,
+
+Achieves quality similar to larger models,
+
+Is optimized for low-latency applications.
 
 
 
