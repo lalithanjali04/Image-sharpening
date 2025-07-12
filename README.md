@@ -21,7 +21,7 @@ Train a compact student model to **generate sharper images from blurry inputs**,
 - **Teacher Model**: A deep network like Restormer, SwinIR, or MPRNet trained on image deblurring or restoration tasks.
 - **Student Model**: A smaller CNN or UNet variant that learns to mimic the teacher.
 - **Knowledge Distillation**: The process of transferring "knowledge" (outputs or internal features) from the teacher to the student.
-## 🧮 Loss Functions
+## Loss Functions
 
 - **L1/L2 Reconstruction Loss**: Student vs. sharp ground truth
 - **Perceptual Loss (VGG)**: Student vs. teacher outputs
@@ -59,13 +59,7 @@ python test.py --name r512_smile_pos --label_nc 0
  --gpu_ids 0,1 --batchSize 32 --how_many 100
 ```
 
-This project demonstrates the practical synergy between Knowledge Distillation and Feed-Forward Image Manipulation for high-quality image sharpening. The resulting student model:
-
-Delivers sharp, detailed outputs in real time,
-
-Achieves quality similar to larger models,
-
-Is optimized for low-latency applications.
+This project demonstrates the practical synergy between Knowledge Distillation and Feed-Forward Image Manipulation for high-quality image sharpening. 
 
 
 
