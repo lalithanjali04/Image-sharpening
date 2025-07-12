@@ -2,20 +2,21 @@
 
 <img width="607" height="261" alt="image" src="https://github.com/user-attachments/assets/6061dcf9-cce8-4fc4-ae9e-a35248e0d87d" />
 <img width="606" height="198" alt="image" src="https://github.com/user-attachments/assets/4d5ae321-1851-446a-a935-645feed5099c" />
-# Image Sharpening using Knowledge Distillation
+
+## Image Sharpening using Knowledge Distillation
 
 ![Sharpening Flow](https://github.com/your-username/Image-sharpening/blob/main/assets/architecture.jpg)
 
 ## Introduction
 
 This project implements **Image Sharpening using Knowledge Distillation (KD)**. It leverages a pre-trained **teacher model** to guide the training of a lightweight **student model** that can enhance blurry images into sharper outputs.
----
+
 
 ## Goal
 
 Train a compact student model to **generate sharper images from blurry inputs**, guided by a high-capacity teacher network trained for image restoration.
 
----
+
 
 ## Key Concepts
 
@@ -23,7 +24,6 @@ Train a compact student model to **generate sharper images from blurry inputs**,
 - **Student Model**: A smaller CNN or UNet variant that learns to mimic the teacher.
 - **Knowledge Distillation**: The process of transferring "knowledge" (outputs or internal features) from the teacher to the student.
 
----
 ## Feed-Forward Image Manipulation
 
 The trained **student model** acts as a feed-forward network that directly maps blurry images to sharp images in **real-time**, avoiding slow optimization-based methods (e.g., latent code editing in GANs).
